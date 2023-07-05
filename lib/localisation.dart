@@ -4,7 +4,7 @@ class MapApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Carte sans API',
+      title: 'Carte interactive',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -21,6 +21,7 @@ class MapPage extends StatelessWidget {
         title: Text('Carte Interactive'),
       ),
       body: Container(
+        alignment: Alignment.center,
         child: Image.asset('assets/map_image.png'), // Remplacez 'assets/map_image.png' par le chemin de votre propre image de carte
       ),
     );
