@@ -4,18 +4,24 @@ import 'homePage.dart';
 import 'localisation.dart';
 
 void main() {
-  runApp(HomeApp());
+  runApp(const HomeApp());
 }
 
 class HomeApp extends StatelessWidget {
+  const HomeApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Page d\'accueil',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: MapPage(),
+      // theme: ThemeData(
+      //   primarySwatch: Colors.blue,
+      // ),
+      home: HomePage(),
+      routes: <String, WidgetBuilder>{
+        '/home' : (BuildContext context) => const HomePage(),
+        '/map' : (BuildContext context) => const MapApp()
+      }
     );
   }
 }

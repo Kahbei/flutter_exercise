@@ -1,24 +1,23 @@
 import 'package:flutter/material.dart';
 
-class MapApp extends StatelessWidget {
+class MapApp extends StatefulWidget {
+  const MapApp({super.key});
+
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Carte interactive',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: MapPage(),
-    );
-  }
+  State<StatefulWidget> createState() => _MapPage();
 }
 
-class MapPage extends StatelessWidget {
+class _MapPage extends State<MapApp> {
+  @override
+  void initState() {
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Carte Interactive'),
+        title: const Text('Carte Interactive'),
       ),
       body: Container(
         alignment: Alignment.center,
