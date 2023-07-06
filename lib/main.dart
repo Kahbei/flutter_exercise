@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'login_page.dart';
 import 'homePage.dart';
 import 'localisation.dart';
 
@@ -17,10 +18,11 @@ class HomeApp extends StatelessWidget {
       // theme: ThemeData(
       //   primarySwatch: Colors.blue,
       // ),
-      home: HomePage(),
+      home: LoginPage(),
       routes: <String, WidgetBuilder>{
         '/home' : (BuildContext context) => const HomePage(),
-        '/map' : (BuildContext context) => const MapApp()
+        '/map' : (BuildContext context) => const MapApp(),
+        '/login' : (BuildContext context) => const LoginPage()
       }
     );
   }
