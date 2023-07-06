@@ -3,6 +3,9 @@
         android:label="hackathon"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAZoaBYMdXZFs_-jGN1MEp5YPVWzcts0DA" />
         <activity
             android:name=".MainActivity"
             android:exported="true"

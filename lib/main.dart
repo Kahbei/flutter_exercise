@@ -18,7 +18,7 @@ class HomeApp extends StatelessWidget {
       // theme: ThemeData(
       //   primarySwatch: Colors.blue,
       // ),
-      home: LoginPage(),
+      home: const LoginPage(),
       routes: <String, WidgetBuilder>{
         '/home' : (BuildContext context) => const HomePage(),
         '/map' : (BuildContext context) => const MapApp(),

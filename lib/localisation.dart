@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class MapApp extends StatefulWidget {
   const MapApp({super.key});
@@ -8,6 +9,14 @@ class MapApp extends StatefulWidget {
 }
 
 class _MapPage extends State<MapApp> {
+  late GoogleMapController mapController;
+
+  final LatLng _center = const LatLng(45.754270, 4.831564);
+
+  void _onMapCreated(GoogleMapController controller) {
+    mapController = controller;
+  }
+
   @override
   void initState() {
     super.initState();
@@ -19,10 +28,13 @@ class _MapPage extends State<MapApp> {
       appBar: AppBar(
         title: const Text('Carte Interactive'),
       ),
-      body: Container(
-        alignment: Alignment.center,
-        child: Image.asset('assets/map_image.png'), // Remplacez 'assets/map_image.png' par le chemin de votre propre image de carte
-      ),
+      body: GoogleMap(
+        onMapCreated: _onMapCreated,
+          initialCameraPosition: CameraPosition(
+              target: _center,
+            zoom: 13.0,
+          )
+      )
     );
   }
 }

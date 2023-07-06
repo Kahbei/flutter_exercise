@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hackathon/main.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -14,13 +13,14 @@ class _LoginPage extends State<LoginPage> {
     super.initState();
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
             Container(
-              margin: EdgeInsets.symmetric(
+              margin: const EdgeInsets.symmetric(
                 vertical: 40,
                 horizontal: 30
               ),
@@ -30,7 +30,7 @@ class _LoginPage extends State<LoginPage> {
                   Image.asset('assets/Logo.png', height: 200),
                   Text(
                     "Relais Bienveillant".toUpperCase(),
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 25,
                       fontWeight: FontWeight.bold,
                       color: Colors.grey,
@@ -39,13 +39,13 @@ class _LoginPage extends State<LoginPage> {
                 ],
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Container(
-              margin: EdgeInsets.symmetric(
+              margin: const EdgeInsets.symmetric(
                 horizontal: 30
               ),
               alignment: Alignment.centerLeft,
-              child: Column(
+              child: const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
@@ -63,19 +63,19 @@ class _LoginPage extends State<LoginPage> {
                 ],
               ),
             ),
-            SizedBox(height: 10),
-            LoginForm(),
-            SizedBox(height: 50),
+            const SizedBox(height: 10),
+            const LoginForm(),
+            const SizedBox(height: 50),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 shape: const StadiumBorder(),
-                primary: Colors.redAccent,
-                padding: EdgeInsets.symmetric(
+                backgroundColor: Colors.redAccent,
+                padding: const EdgeInsets.symmetric(
                   horizontal: 125,
                   vertical: 25,
                 ),
               ),
-              child: Text(
+              child: const Text(
                 'Connexion',
                 style: TextStyle(
                   fontSize: 20
@@ -85,24 +85,24 @@ class _LoginPage extends State<LoginPage> {
                 Navigator.pushNamed(context, '/home').then((_) => setState(() {}));
               },
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             TextButton(
               onPressed: () {},
-              child: Text(
+              child: const Text(
                 "Mot de passe oublié ?",
                 style: TextStyle(
                   color: Colors.grey
                 ),
               ),
             ),
-            SizedBox(height: 40),
+            const SizedBox(height: 40),
             Image.asset('assets/FaceID.png', height: 150),
-            SizedBox(height: 15),
+            const SizedBox(height: 15),
             Align(
               alignment: Alignment.center,
               child: TextButton(
                 onPressed: () {},
-                child: Text(
+                child: const Text(
                   "Créer un compte",
                   style: TextStyle(
                     color: Colors.redAccent
@@ -118,8 +118,10 @@ class _LoginPage extends State<LoginPage> {
 }
 
 class LoginForm extends StatefulWidget {
+  const LoginForm({super.key});
+
   @override
-  _LoginFormState createState() => _LoginFormState();
+  State<StatefulWidget> createState() => _LoginFormState();
 }
 
 class _LoginFormState extends State<LoginForm> {
@@ -127,7 +129,7 @@ class _LoginFormState extends State<LoginForm> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(
+      margin: const EdgeInsets.symmetric(
         horizontal: 30,
       ),
       child: Column(
@@ -140,7 +142,7 @@ class _LoginFormState extends State<LoginForm> {
               ),
             ),
           ),
-          SizedBox(height: 30),
+          const SizedBox(height: 30),
           TextField(
             obscureText: _obscureText,
             decoration: InputDecoration(
@@ -149,7 +151,7 @@ class _LoginFormState extends State<LoginForm> {
               ),
               labelText: 'Password',
               suffixIcon: IconButton(
-                icon: Icon(
+                icon: const Icon(
                   Icons.visibility,
                   color: Colors.black,
                 ),
